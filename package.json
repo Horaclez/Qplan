@@ -1,0 +1,31 @@
+{
+  "name": "qplan-app",
+  "version": "1.0.0",
+  "description": "Qplan - App nativa para PC y Android",
+  "main": "main.js",
+  "scripts": {
+    "prepare-web": "node prepare-web.js",
+    "start": "electron .",
+    "build:win": "npm run prepare-web && electron-builder --win"
+  },
+  "dependencies": {
+    "@capacitor/android": "6.2.0",
+    "@capacitor/cli": "6.2.0",
+    "@capacitor/core": "6.2.0"
+  },
+  "devDependencies": {
+    "electron": "33.2.0",
+    "electron-builder": "25.1.8"
+  },
+  "build": {
+    "appId": "com.qplan.app",
+    "productName": "Qplan",
+    "files": [
+      "main.js",
+      "www/**/*"
+    ],
+    "win": {
+      "target": "portable"
+    }
+  }
+}
