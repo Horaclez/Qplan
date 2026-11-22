@@ -1,0 +1,17 @@
+{
+  "name": "Q-PLAN — Planes de Mejora Continua",
+  "short_name": "Q-PLAN",
+  "description": "Diseño, trazabilidad metodológica y auditoría de Planes de Mejora Continua en salud y gestión clínica.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#faf9f5",
+  "theme_color": "#0f766e",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='36' fill='%230f766e'/%3E%3Ctext x='96' y='124' font-family='sans-serif' font-size='88' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3EQ%3C/text%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}

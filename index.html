@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="paper">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f766e" />
+  <title>Q-PLAN | Diseño y Auditoría de Planes de Mejora Continua</title>
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-top">
+      <div class="brand">
+        <span class="brand-badge">Q-PLAN</span>
+        <div>
+          <h1 class="brand-title">Planes de Mejora Continua</h1>
+          <p class="brand-sub">Trazabilidad metodológica y auditoría clínica</p>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <div class="theme-switcher" role="group" aria-label="Selector de tema">
+          <button type="button" class="theme-btn" data-set-theme="paper" title="Tema Claro Papel">Papel</button>
+          <button type="button" class="theme-btn" data-set-theme="sage" title="Tema Salvia">Salvia</button>
+          <button type="button" class="theme-btn" data-set-theme="dark" title="Tema Nocturno">Nocturno</button>
+        </div>
+        <button type="button" id="btnReportMode" class="btn btn-primary">Informe Formal</button>
+      </div>
+    </div>
+
+    <div class="plan-toolbar">
+      <div class="plan-selector-group">
+        <label for="planSelector" class="sr-only">Plan activo</label>
+        <select id="planSelector" class="select-control"></select>
+        <span id="saveStatus" class="save-badge">Guardado local</span>
+      </div>
+
+      <div class="plan-actions">
+        <button type="button" id="btnNewPlan" class="btn btn-secondary btn-sm">+ Nuevo</button>
+        <button type="button" id="btnDuplicatePlan" class="btn btn-secondary btn-sm">Duplicar</button>
+        <button type="button" id="btnExportJson" class="btn btn-secondary btn-sm">Exportar .JSON</button>
+        <button type="button" id="btnImportJson" class="btn btn-secondary btn-sm">Importar .JSON</button>
+        <input type="file" id="importJsonInput" accept=".json,application/json" hidden />
+        <button type="button" id="btnLoadSample" class="btn btn-ghost btn-sm" title="Cargar caso clínico ejemplo">Caso Modelo</button>
+        <button type="button" id="btnDeletePlan" class="btn btn-danger-ghost btn-sm">Eliminar</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="audit-bar" id="auditBar" aria-live="polite">
+    <div class="audit-summary">
+      <span class="audit-label">Coherencia Metodológica:</span>
+      <strong id="auditScore" class="audit-score">0%</strong>
+      <span id="auditCurrentMsg" class="audit-msg">Analizando estructura del plan...</span>
+    </div>
+    <button type="button" id="btnToggleAuditDetails" class="btn btn-ghost btn-sm">Ver alertas</button>
+    <div id="auditDetailsPanel" class="audit-details hidden"></div>
+  </section>
+
+  <nav class="stepper-nav" aria-label="Etapas del Plan de Mejora">
+    <ol id="stageNav" class="stepper-list"></ol>
+  </nav>
+
+  <main id="stageContainer" class="main-container"></main>
+
+  <footer class="stage-footer">
+    <button type="button" id="btnPrevStage" class="btn btn-secondary">← Etapa Anterior</button>
+    <span id="stageStepIndicator" class="step-indicator">Etapa 1 de 8</span>
+    <button type="button" id="btnNextStage" class="btn btn-primary">Siguiente Etapa →</button>
+  </footer>
+
+  <script src="./js/sample-case.js"></script>
+  <script src="./js/state.js"></script>
+  <script src="./js/diagrams.js"></script>
+  <script src="./js/stages-1-4.js"></script>
+  <script src="./js/stages-5-8.js"></script>
+  <script src="./js/report.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
